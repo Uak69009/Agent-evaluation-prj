@@ -1,0 +1,19 @@
+[project]
+name = "agentevalops-workers"
+version = "0.1.0"
+description = "Background task worker service for asynchronous evaluations"
+requires-python = ">=3.12"
+dependencies = [
+    "redis>=5.2.0",
+    "pydantic>=2.10.0",
+    "agentevalops-schemas",
+    "agentevalops-eval",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+

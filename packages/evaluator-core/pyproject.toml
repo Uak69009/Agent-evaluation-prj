@@ -1,0 +1,16 @@
+[project]
+name = "agentevalops-eval"
+version = "0.1.0"
+description = "Core evaluation engine interfaces and evaluator plugins for AgentEvalOps"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.10.0",
+    "agentevalops-schemas",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agentevalops_eval"]

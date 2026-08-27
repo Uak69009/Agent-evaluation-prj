@@ -1,0 +1,5 @@
+{
+  "tracking_uri": "http://localhost:5000",
+  "experiment_name": "agent_failure_prediction_v1",
+  "artifact_location": "s3://agentevalops-mlflow-artifacts/failure-prediction"
+}
