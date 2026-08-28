@@ -1,4 +1,5 @@
 from agentevalops_eval.base import Evaluator
+from agentevalops_eval.benchmark import AgentEvalBench, AgentEvalBenchSummary, agent_eval_bench
 from agentevalops_eval.deterministic import (
     CostLimitEvaluator,
     ExactMatchEvaluator,
@@ -14,18 +15,9 @@ from agentevalops_eval.evaluators import (
     SafetyEvaluator,
     TrajectoryEvaluator,
 )
-from agentevalops_eval.gate import (
-    DeploymentGateEngine,
-    GateDecisionSchema,
-    PolicyProfile,
-    deployment_gate_engine,
-)
+from agentevalops_eval.gate import DeploymentGateEngine, GateDecisionSchema, PolicyProfile, deployment_gate_engine
 from agentevalops_eval.llm_judge import JudgeCalibrationEngine, RubricJudgeEvaluator
-from agentevalops_eval.rag import (
-    CitationQualityEvaluator,
-    ContextPrecisionEvaluator,
-    FaithfulnessEvaluator,
-)
+from agentevalops_eval.rag import CitationQualityEvaluator, ContextPrecisionEvaluator, FaithfulnessEvaluator
 from agentevalops_eval.registry import EvaluatorRegistry, evaluator_registry
 from agentevalops_eval.safety import PIILeakageEvaluator, PromptInjectionEvaluator
 from agentevalops_eval.trajectory import RecoveryEvaluator, StepEfficiencyEvaluator
@@ -40,6 +32,9 @@ __all__ = [
     "deployment_gate_engine",
     "PolicyProfile",
     "GateDecisionSchema",
+    "AgentEvalBench",
+    "agent_eval_bench",
+    "AgentEvalBenchSummary",
     "DeterministicEvaluator",
     "LLMJudgeEvaluator",
     "RAGEvaluator",
