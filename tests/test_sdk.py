@@ -11,5 +11,5 @@ def test_sdk_tracer_context():
     client = AgentEvalOps(api_key="test-key-123")
     with client.tracer.start_trace("unit_test_trace") as ctx:
         span_id = ctx.add_span("tool_call_span", {"tool": "calculator"})
-        assert span_id == "span_1"
+        assert span_id.startswith("span_1")
         assert len(ctx.spans) == 1

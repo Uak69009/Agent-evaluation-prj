@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 from typing import Any
 
@@ -30,4 +30,4 @@ class EvaluationResultSchema(BaseModel):
     confidence: float = Field(1.0, ge=0.0, le=1.0)
     severity: SeverityLevel = SeverityLevel.INFO
     metadata: dict[str, Any] = Field(default_factory=dict)
-    timestamp: datetime = Field(default_factory=datetime.utcnow)
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(UTC))

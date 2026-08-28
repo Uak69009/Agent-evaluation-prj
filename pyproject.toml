@@ -16,6 +16,12 @@ dependencies = [
     "httpx>=0.28.0",
     "structlog>=24.4.0",
     "python-multipart>=0.0.17",
+    "agentevalops-sdk",
+    "agentevalops-schemas",
+    "agentevalops-eval",
+    "agentevalops-api",
+    "agentevalops-workers",
+    "agentevalops-ml-failure-prediction",
 ]
 
 [build-system]
@@ -24,8 +30,6 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-
-
 
 [tool.uv.workspace]
 members = [
@@ -44,7 +48,6 @@ agentevalops-sdk = { workspace = true }
 agentevalops-api = { workspace = true }
 agentevalops-workers = { workspace = true }
 agentevalops-ml-failure-prediction = { workspace = true }
-
 
 [dependency-groups]
 dev = [
@@ -85,9 +88,8 @@ select = [
 ]
 ignore = ["E501", "B008", "UP042"]
 
-
 [tool.ruff.lint.isort]
-known-first-party = ["agentevalops", "agentevalops_schemas", "agentevalops_eval", "app"]
+known-first-party = ["agentevalops", "agentevalops_schemas", "agentevalops_eval", "agentevalops_ml", "app"]
 
 [tool.mypy]
 python_version = "3.12"
@@ -101,3 +103,12 @@ minversion = "8.0"
 testpaths = ["tests", "apps/api", "packages/python-sdk", "packages/evaluator-core"]
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
+pythonpath = [
+    ".",
+    "apps/api",
+    "packages/python-sdk/src",
+    "packages/shared-schemas/src",
+    "packages/evaluator-core/src",
+    "ml/failure-prediction/src",
+    "services/workers",
+]

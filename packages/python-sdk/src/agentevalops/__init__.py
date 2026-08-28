@@ -6,11 +6,13 @@ from agentevalops.exceptions import (
     ConfigurationError,
     NetworkError,
 )
+from agentevalops.tracer import AgentTracer
 
 __version__ = "0.1.0"
 
 __all__ = [
     "AgentEvalOps",
+    "AgentTracer",
     "SDKConfig",
     "AgentEvalOpsError",
     "APIError",
